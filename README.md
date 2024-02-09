@@ -1,6 +1,6 @@
 Шаги:
 
-Установка роли geerlingguy.pip (Pip (Python package manager) for Linux.):
+Установка роли geerlingguy.pip версия 3.0.2 (Pip (Python package manager) for Linux.):
 make install_role
 
 Установки pip и его модуля docker:
