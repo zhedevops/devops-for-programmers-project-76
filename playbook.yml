@@ -4,23 +4,19 @@
   roles:
     - role: geerlingguy.pip
       tags: install_dependencies
-      vars:
-        pip_install_packages:
-          - name: docker
-            state: present
 
   tasks:
     - name: create env
       ansible.builtin.template:
-        src: ./templates/env.j2
+        src: env.j2
         dest: .env
-        mode: "0644"
+        mode: "644"
     - name: install redmine
       community.docker.docker_container:
         name: redmine
         image: redmine:5.1.1
         ports:
-          - "80:3000"
+          - "{{ REDMINE_PORT }}:3000"
         env_file: .env
 
 - hosts: webservers
@@ -29,12 +25,3 @@
   roles:
     - role: datadog.datadog
       tags: install_dependencies
-      datadog_api_key: "{{ DATADOG_KEY }}"
-      datadog_site: "datadoghq.eu"
-      datadog_apm_instrumentation_enabled: "all"
-      datadog_checks:
-        http_check:
-          init_config:
-          instances:
-            - name: check my site
-              url: http://zhedev.ru
