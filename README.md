@@ -1,10 +1,10 @@
-###Требования:
+### Требования:
 Операционная система: Ubuntu (Linux)
-####Утилиты: 
+#### Утилиты: 
 - Ansible, версия 2.16.1
 - GNU Make, версия 4.3
 
-###Запуск приложения пошагово:
+### Запуск приложения пошагово:
 
 1. Установка ролей:
    - [geerlingguy.pip](https://galaxy.ansible.com/ui/standalone/roles/geerlingguy/pip/), версия 3.0.2 (Pip (Python package manager) for Linux) и
@@ -20,11 +20,11 @@ make install_dependencies
 ```commandline
 make install_redmine
  ```  
-###Запуск приложения одной командой:
+### Запуск приложения одной командой:
 ```commandline
 make deploy
 ```
-###Ссылка на запущенное приложение:
+### Ссылка на запущенное приложение:
 [Redmine](http://zhedev.ru)
 
 ### Hexlet tests and linter status:
